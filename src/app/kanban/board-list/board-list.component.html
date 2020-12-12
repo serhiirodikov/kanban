@@ -8,5 +8,15 @@
     <mat-icon cdkDragHandle class="handle">drag_indicator</mat-icon>
   </app-board>
 
-  <div class="board-button"></div>
+  <div class="board-button">
+    <button
+      mat-button
+      mat-raised-button
+      color="accent"
+      cdkDragDisabled
+      (click)="openBoardDialog()"
+    >
+      New board
+    </button>
+  </div>
 </div>
