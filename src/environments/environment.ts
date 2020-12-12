@@ -10,13 +10,13 @@ export const environment = {
   firebase: {
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-    apiKey: 'AIzaSyCOnGX56qBJtGcP-pBq22gaukfYfQ45eSM',
-    authDomain: 'todos-nulp.firebaseapp.com',
-    projectId: 'todos-nulp',
-    storageBucket: 'todos-nulp.appspot.com',
-    messagingSenderId: '995686128913',
-    appId: '1:995686128913:web:e645f6982666e60ab200b0',
-    measurementId: 'G-9BKG7GH61Y',
+    apiKey: 'AIzaSyAKlEX5a8PQaadYNSrohqfl33O37Kjkv1Y',
+    authDomain: 'angular-voxer.firebaseapp.com',
+    databaseURL: 'https://todos-nulp-default-rtdb.firebaseio.com/',
+    projectId: 'angular-voxer',
+    storageBucket: 'angular-voxer.appspot.com',
+    messagingSenderId: '122050526979',
+    appId: '1:122050526979:web:529304dce5ffca7a',
   },
 };
 
