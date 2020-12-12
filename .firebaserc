@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "todos-nulp": {
+      "hosting": {
+        "kanban-app": [
+          "todos-nulp"
+        ]
+      }
+    }
+  }
+}
