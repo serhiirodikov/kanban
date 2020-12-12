@@ -1,9 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BoardService } from '../board.service';
 
 @Component({
   selector: 'app-task-dialog',
+  styleUrls: ['./task-dialog.component.scss'],
   template: `
     <h1 mat-dialog-title>Task</h1>
     <div mat-dialog-content class="content">
@@ -30,26 +31,28 @@ import { BoardService } from '../board.service';
       <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
         {{ data.isNew ? 'Add Task' : 'Update Task' }}
       </button>
-      <app-delete-button (delete)="handleTaskDelete()" *ngIf="!data.isNew">
-      </app-delete-button>
+      <app-delete-button
+        (delete)="handleTaskDelete()"
+        *ngIf="!data.isNew"
+      ></app-delete-button>
     </div>
   `,
-  styleUrls: ['./task-dialog.component.scss'],
 })
 export class TaskDialogComponent {
   labelOptions = ['purple', 'blue', 'green', 'yellow', 'red', 'gray'];
 
   constructor(
-    private dialogRef: MatDialogRef<TaskDialogComponent>,
-    private ps: BoardService,
+    public dialogRef: MatDialogRef<TaskDialogComponent>,
+    private boardService: BoardService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
-  onNoClick() {
+  onNoClick(): void {
     this.dialogRef.close();
   }
+
   handleTaskDelete() {
-    this.ps.removeTask(this.data.boardId, this.data.task);
+    this.boardService.removeTask(this.data.boardId, this.data.task);
     this.dialogRef.close();
   }
 }

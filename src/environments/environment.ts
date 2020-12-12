@@ -12,7 +12,7 @@ export const environment = {
 
     apiKey: 'AIzaSyAKlEX5a8PQaadYNSrohqfl33O37Kjkv1Y',
     authDomain: 'angular-voxer.firebaseapp.com',
-    databaseURL: 'https://todos-nulp-default-rtdb.firebaseio.com/',
+    databaseURL: 'https://angular-voxer.firebaseio.com',
     projectId: 'angular-voxer',
     storageBucket: 'angular-voxer.appspot.com',
     messagingSenderId: '122050526979',

@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -11,7 +11,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
         <input placeholder="title" matInput [(ngModel)]="data.title" />
       </mat-form-field>
     </div>
-    <div mat-mat-dialog-actions>
+    <div mat-dialog-actions>
       <button mat-button (click)="onNoClick()">Cancel</button>
       <button mat-button [mat-dialog-close]="data.title" cdkFocusInitial>
         Create
