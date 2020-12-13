@@ -1,1 +1,52 @@
-<p>home-page works!</p>
+<div class="sidenav">
+  <div class="info-user" *ngIf="afAuth.authState | async as user">
+    <img src="{{ user.photoURL }}" />
+    <span>{{ user.displayName }}</span>
+  </div>
+  <button class="create-btn" type="button" (click)="openDialof()">
+    Create a task
+  </button>
+  <h3 class="list-top">Containters</h3>
+  <div class="list" *ngFor="let item of items">
+    <p (click)="containerBtn($event.target)">{{ item.title }}</p>
+  </div>
+</div>
+<div class="main" *ngFor="let lol of listForShow">
+  <section class="todoapp">
+    <header class="header">
+      <h1>{{ lol.title }}</h1>
+      <input
+        #inputValue
+        class="new-todo"
+        placeholder="What needs to be done?"
+        autofocus
+        (keyup.enter)="addTodos(lol, inputValue)"
+      />
+    </header>
+    <section>
+      <ul>
+        <li
+          #inputSomething
+          class="todo-list"
+          *ngFor="let loles of lol['content']"
+        >
+          <div class="view">
+            <button class="btn-check" (click)="changeChecked(inputSomething)">
+              <mat-icon>check_circle_outline</mat-icon>
+            </button>
+
+            <label>{{ loles }}</label>
+            <div class="collections_button">
+              <button class="edit" (click)="editTodo(inputSomething)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button class="close" (click)="deleteBtn(inputSomething)">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>

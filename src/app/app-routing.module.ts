@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomePageComponent } from './home-page/home-page.component';
 import { AuthGuard } from './user/auth.guard';
-import { LoginPageComponent } from './user/login-page/login-page.component';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./home-page/home.module').then((m) => m.homeModule),
+  },
   {
     path: 'login',
     loadChildren: () => import('./user/user.module').then((m) => m.UserModule),

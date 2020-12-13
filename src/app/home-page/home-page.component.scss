@@ -1,0 +1,184 @@
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: rgb(65, 65, 65);
+  overflow-x: hidden;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-top: 15px;
+  margin-left: 255px;
+  padding-left: 10px; /* Same as the width of the sidenav */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.info-user {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  width: 90%;
+  & img {
+    border-radius: 50%;
+    height: 40px;
+  }
+  & span {
+    width: 100%;
+    padding-left: 10px;
+    margin-left: 10px;
+    border-bottom: 1px solid white;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    letter-spacing: 2px;
+  }
+}
+
+.create-btn {
+  width: 90%;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(109, 109, 109);
+  color: white;
+  border: none;
+  &:hover {
+    background-color: rgb(187, 187, 187);
+    cursor: pointer;
+  }
+}
+.list-top {
+  margin-left: 10px;
+}
+.list {
+  text-align: start;
+  width: 100%;
+  & p {
+    margin: 0;
+    border-bottom: 1px solid rgb(66, 66, 66);
+    width: 100%;
+    padding: 10px;
+    padding-left: 15px;
+    background-color: rgb(109, 109, 109);
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(187, 187, 187);
+    }
+    &:active {
+      background-color: rgb(187, 187, 187);
+    }
+  }
+}
+.todoapp {
+  margin: 0;
+  width: 500px;
+  height: 80vh;
+  background-color: rgb(100, 100, 100);
+  border-radius: 10px;
+  text-align: center;
+}
+.header {
+  & input {
+    border: none;
+    margin: 0;
+    width: 90%;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: gray;
+    font-size: 14pt;
+
+    color: white;
+    &::placeholder {
+      color: white;
+      font-size: 30sp;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.view {
+  display: flex;
+  justify-content: space-between;
+}
+.todo-list {
+  list-style: none;
+  padding: 5px;
+}
+
+li {
+  position: relative;
+  font-size: 24px;
+  border-bottom: 1px solid #ededed;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+.btn-check {
+  background: none;
+
+  border: none;
+  & mat-icon {
+    font-size: 2.2rem;
+    color: rgb(163, 163, 163);
+  }
+}
+section {
+  // display: flex;
+  flex-direction: column;
+}
+.close {
+  background: none;
+
+  border: none;
+  & mat-icon {
+    font-size: 2.2rem;
+    color: rgb(163, 163, 163);
+    &:hover {
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+.edit {
+  background: none;
+
+  border: none;
+  & mat-icon {
+    font-size: 2.2rem;
+    color: rgb(163, 163, 163);
+    &:hover {
+      cursor: pointer;
+      color: white;
+    }
+  }
+}
+.collections_button {
+  margin-right: 10px;
+}
+.checked {
+  text-decoration: line-through;
+  background-color: rgb(212, 212, 212);
+}

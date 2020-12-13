@@ -15,7 +15,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ShellComponent } from './shell/shell.component';
 import { DeleteButtonComponent } from './delete-button/delete-button.component';
-
 const components = [ShellComponent, DeleteButtonComponent];
 const modules = [
   CommonModule,
