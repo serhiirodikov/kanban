@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-email-login',
@@ -15,7 +16,11 @@ export class EmailLoginComponent implements OnInit {
 
   serverMessage: string;
 
-  constructor(private afAuth: AngularFireAuth, private fb: FormBuilder) {}
+  constructor(
+    private afAuth: AngularFireAuth,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.form = this.fb.group({

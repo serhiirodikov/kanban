@@ -5,6 +5,7 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   UrlTree,
+  Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { SnackService } from '../services/snack.service';
@@ -13,7 +14,11 @@ import { SnackService } from '../services/snack.service';
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private afAuth: AngularFireAuth, private snack: SnackService) {}
+  constructor(
+    private afAuth: AngularFireAuth,
+    private snack: SnackService,
+    private router: Router
+  ) {}
   async canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -22,7 +27,10 @@ export class AuthGuard implements CanActivate {
     const isLoggedIn = !!user;
     if (!isLoggedIn) {
       this.snack.authError();
+      this.router.navigate['login'];
+    } else {
+      this.router.navigate['home'];
+      return isLoggedIn;
     }
-    return isLoggedIn;
   }
 }

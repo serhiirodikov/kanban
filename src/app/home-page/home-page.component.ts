@@ -55,7 +55,6 @@ export class HomePageComponent {
     const data = $event.querySelector('label').textContent;
     const dialogRef = this.dialog.open(DialogCreateComponent, {
       data,
-      autoFocus: true,
       width: '400px',
     });
     dialogRef.afterClosed().subscribe((res) => {

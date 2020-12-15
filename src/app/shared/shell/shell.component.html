@@ -9,17 +9,14 @@
   >
     <mat-toolbar> menu </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/" (click)="drawer.close()">Home</a>
+      <a mat-list-item routerLink="/home" (click)="drawer.close()">Home</a>
       <a mat-list-item routerLink="/login" (click)="drawer.close()">Login</a>
       <a mat-list-item routerLink="/kanban" (click)="drawer.close()">Kanban</a>
-      <a mat-list-item routerLink="/customers" (click)="drawer.close()"
-        >SSR demo</a
-      >
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar>
+    <mat-toolbar class="pos">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -29,7 +26,7 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span class="logo" routerLink="/">Angular todos</span>
+      <span class="logo" routerLink="/home">Angular todos</span>
       <span class="fill-space"></span>
       <div *ngIf="!(isHandset$ | async)">
         <a mat-button routerLink="/kanban">Kanban</a>
